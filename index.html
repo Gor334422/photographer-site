@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Anahit Grigoryan | Wedding Photographer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Jost:wght@300;400;500&family=Noto+Serif+Armenian:wght@300;400&family=Noto+Sans+Armenian:wght@300;400;500&display=swap" rel="stylesheet">
+<meta name="description" content="Wedding and love-story photographer in Armenia. See the portfolio, packages and book your date online.">
+<meta name="theme-color" content="#fbf7f7">
+<script>
+/* ===== SITE SETTINGS: change these values for each new client ===== */
+var SITE={
+  name:'Anahit Grigoryan',
+  nameHy:'Անահիտ Գրիգորյան',
+  nameRu:'Анахит Григорян',
+  email:'hello@example.com',
+  phone:'+374 00 000 000',
+  phoneRaw:'+37400000000',
+  instagram:'anahit.photo',
+  whatsapp:'37400000000',  /* digits only, with country code; '' hides the WhatsApp button */
+  prices:[150,650,1100],    /* Love story, Wedding, Full day (USD) */
+  paymentLink:'',           /* Stripe or other deposit payment link; '' = booking request goes by email */
+  photos:{hero:'',about:'',tiles:['','','','','','']}  /* image URLs or data: URIs */
+};
+SITE.footer='© '+new Date().getFullYear()+' '+SITE.name+'. All rights reserved.';
+SITE.footerRu='© '+new Date().getFullYear()+' '+SITE.nameRu+'. Все права защищены.';
+SITE.footerHy='© '+new Date().getFullYear()+' '+SITE.nameHy+'։ Բոլոր իրավունքները պաշտպանված են։';
+</script>
+<style>
+:root{
+  --bg:#fbf7f7;--bg2:#f4eaea;--ink:#3a2a31;--mute:#7b6870;--rose:#d9b8b8;--rose2:#ecd6d4;--sage:#a9b39d;--gold:#a88a55;--line:#e6d6d6;
+  --serif:"Cormorant Garamond","Noto Serif Armenian",Georgia,"Times New Roman",serif;
+  --sans:"Jost","Noto Sans Armenian","Segoe UI",system-ui,sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#241a1f;--bg2:#2e2228;--ink:#f3e8e8;--mute:#c2adb2;--rose:#8c6a6f;--rose2:#4a3439;--sage:#7f8a75;--gold:#cfb07a;--line:#443238}}
+:root[data-theme="dark"]{--bg:#241a1f;--bg2:#2e2228;--ink:#f3e8e8;--mute:#c2adb2;--rose:#8c6a6f;--rose2:#4a3439;--sage:#7f8a75;--gold:#cfb07a;--line:#443238}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.75;font-size:17px}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.15;margin:0}
+h1{font-size:clamp(44px,7vw,82px);margin-bottom:22px}
+h2{font-size:clamp(34px,4.5vw,50px);margin-bottom:14px}
+h3{font-size:28px}
+.sec{padding:80px 0}
+.alt{background:var(--bg2)}
+.lead{color:var(--mute);max-width:56ch}
+.page{display:none}
+.page.on{display:block}
+
+header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;min-height:68px;gap:8px 24px;flex-wrap:wrap}
+.brand{font-family:var(--serif);font-size:26px;text-decoration:none;white-space:nowrap}
+nav{display:flex;gap:26px;flex-wrap:wrap}
+nav a{text-decoration:none;font-size:15px;color:var(--mute);padding:4px 0;border-bottom:1px solid transparent}
+nav a:hover{color:var(--ink)}
+nav a[aria-current="page"]{color:var(--ink);border-color:var(--gold)}
+@media(max-width:620px){nav{gap:16px;width:100%;padding-bottom:10px}nav a{font-size:14px}}
+
+.lang{display:flex;gap:4px}.lang button{font:inherit;font-size:14px;padding:4px 12px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--mute);cursor:pointer}.lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+@media(max-width:620px){.lang{order:2;margin-left:auto}nav{order:3}}
+.hero{padding:64px 0 96px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.hero p{color:var(--mute);max-width:44ch;margin:0 0 34px}
+.btns{display:flex;flex-wrap:wrap;gap:14px}
+.btn{display:inline-block;padding:14px 30px;border-radius:999px;text-decoration:none;font:inherit;font-size:15px;border:1px solid var(--ink);color:var(--ink);background:transparent;cursor:pointer;transition:background .2s,color .2s}
+.btn.fill{background:var(--ink);color:var(--bg)}
+.btn.fill:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+.btn.line:hover{background:var(--rose2)}
+.arch{position:relative;aspect-ratio:3/4;border-radius:999px 999px 6px 6px;background:linear-gradient(165deg,var(--rose2),var(--rose) 55%,var(--sage));animation:rise 1.4s ease both}
+.arch::after{content:"";position:absolute;inset:-14px;border:1px solid var(--gold);border-radius:999px 999px 10px 10px;opacity:.7}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.arch{animation:none}}
+@media(max-width:820px){.hero .wrap{grid-template-columns:1fr}.arch{max-width:320px;margin:0 auto;order:-1}}
+
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 34px}
+.chip{font:inherit;font-size:15px;padding:8px 20px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--mute);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+.tile{aspect-ratio:4/5;border-radius:4px;display:flex;align-items:flex-end;padding:18px;color:#fff;font-family:var(--serif);font-size:24px}
+.tile:nth-child(3n+2){margin-top:34px}
+.tile.arc{border-radius:999px 999px 4px 4px}
+.tile[hidden]{display:none}
+.t1{background:linear-gradient(160deg,#e8cfcd,#c79e9e)}.t2{background:linear-gradient(160deg,#c9d1bd,#8d9b80)}.t3{background:linear-gradient(160deg,#efe0d2,#c4a583)}
+.t4{background:linear-gradient(160deg,#d8c9d6,#a48ba3)}.t5{background:linear-gradient(160deg,#f1d9d6,#d4a9a4)}.t6{background:linear-gradient(160deg,#cfd6c4,#a3b095)}
+.tile span{text-shadow:0 1px 8px rgba(0,0,0,.3)}
+@media(max-width:820px){.grid{grid-template-columns:repeat(2,1fr)}.tile:nth-child(3n+2){margin-top:0}.tile:nth-child(even){margin-top:28px}}
+
+.quote{text-align:center;max-width:760px;margin:0 auto}
+.quote blockquote{font-family:var(--serif);font-size:clamp(26px,3.4vw,36px);line-height:1.4;margin:0 0 18px}
+.quote cite{color:var(--mute);font-style:normal}
+.band{text-align:center}
+.band .lead{margin:0 auto 28px}
+
+.two{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+.pic{aspect-ratio:1;border-radius:50%;background:linear-gradient(200deg,var(--sage),var(--rose2));max-width:340px;width:100%;margin:0 auto}
+.two p{color:var(--mute);margin:0 0 14px;max-width:58ch}
+.steps{padding:0;margin:40px 0 0;list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;counter-reset:s}
+.steps li{counter-increment:s;border-top:1px solid var(--gold);padding-top:16px;color:var(--mute)}
+.steps li::before{content:counter(s) ".";font-family:var(--serif);font-size:28px;color:var(--gold);display:block}
+.steps b{display:block;font-family:var(--serif);font-weight:400;font-size:24px;color:var(--ink)}
+@media(max-width:820px){.two{grid-template-columns:1fr}.steps{grid-template-columns:1fr}}
+
+.plans{display:grid;grid-template-columns:1fr 1.15fr 1fr;margin:40px 0 70px;align-items:stretch}
+.plan{padding:36px 30px;border:1px solid var(--line);display:flex;flex-direction:column;background:var(--bg)}
+.plan+.plan{border-left:none}
+.plan.main{border:1px solid var(--gold);margin:-18px 0;padding:50px 32px}
+.price{font-family:var(--serif);font-size:42px;margin:6px 0 14px}
+.plan ul{list-style:none;padding:0;margin:0 0 26px;color:var(--mute);flex:1}
+.plan li{padding:8px 0;border-bottom:1px solid var(--line)}
+@media(max-width:820px){.plans{grid-template-columns:1fr;gap:16px}.plan+.plan{border-left:1px solid var(--line)}.plan.main{margin:0;padding:36px 30px}}
+details{border-bottom:1px solid var(--line);padding:16px 0;max-width:760px}
+summary{cursor:pointer;font-family:var(--serif);font-size:24px}
+details p{color:var(--mute);margin:10px 0 0}
+
+.contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px}
+.contact ul{list-style:none;padding:0;margin:24px 0 0;color:var(--mute)}
+form{display:grid;gap:16px}
+label{font-size:14px;color:var(--mute);display:grid;gap:6px}
+input,textarea,select{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:12px 14px;width:100%}
+textarea{min-height:120px;resize:vertical}
+form .btn{justify-self:start}
+@media(max-width:820px){.contact{grid-template-columns:1fr}}
+.post{display:grid;grid-template-columns:180px 1fr;gap:28px;padding:28px 0;border-top:1px solid var(--line);align-items:center;text-decoration:none}
+.post:last-child{border-bottom:1px solid var(--line)}
+.thumb{aspect-ratio:4/5;border-radius:999px 999px 4px 4px}
+.post h3{margin:4px 0 8px}.post p{color:var(--mute);margin:0 0 10px;max-width:56ch}.post:hover h3{color:var(--gold)}
+.meta{font-size:14px;color:var(--mute)}
+.more{font-size:15px;border-bottom:1px solid var(--gold)}
+.wrap.article{max-width:760px}.article p{color:var(--mute)}.back{font-size:15px;color:var(--mute);display:inline-block;margin-bottom:24px}.article .btn{margin-top:20px}
+@media(max-width:620px){.post{grid-template-columns:110px 1fr;gap:16px}.post h3{font-size:22px}}
+.book{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;margin-top:34px;align-items:start}
+.calh{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;font-family:var(--serif);font-size:26px}
+.calh button{font:inherit;font-size:22px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.dow,.days{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;text-align:center}
+.dow span{font-size:13px;color:var(--mute);padding-bottom:6px}
+.days button{font:inherit;aspect-ratio:1;border-radius:50%;border:1px solid transparent;background:transparent;color:var(--ink);cursor:pointer}
+.days button:hover:not(:disabled){border-color:var(--gold)}
+.days button.off{color:var(--mute);opacity:.45;text-decoration:line-through;cursor:not-allowed}
+.days button.sel{background:var(--ink);color:var(--bg)}
+.sum{background:var(--bg2);padding:30px;display:grid;gap:14px}
+.row{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-bottom:8px;color:var(--mute)}.row b{color:var(--ink);font-weight:400;text-align:right}
+.done{margin-top:34px;padding:30px;border:1px solid var(--gold)}
+@media(max-width:820px){.book{grid-template-columns:1fr}}
+.tile[data-photo]{cursor:zoom-in}
+.wa{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:20;padding:12px 22px;border-radius:999px;background:var(--ink);color:var(--bg);text-decoration:none;font-size:15px;box-shadow:0 6px 24px rgba(58,42,49,.25)}
+.wa:hover{background:var(--gold);color:#fff}.wa[hidden]{display:none}
+.lb{position:fixed;inset:0;z-index:50;background:rgba(20,12,15,.92);display:flex;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.lb[hidden]{display:none}
+#lbi{width:min(92vw,1000px);height:min(84vh,800px);background:center/contain no-repeat}
+#lbx{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:18px;font-size:34px;line-height:1;color:#fff;background:none;border:0;cursor:pointer}
+footer{padding:36px 0;text-align:center;color:var(--mute);font-size:14px;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="#/">Anahit Grigoryan</a>
+    <nav aria-label="Main">
+      <a href="#/">Home</a><a href="#/portfolio">Portfolio</a><a href="#/about">About</a><a href="#/blog">Blog</a><a href="#/pricing">Pricing</a><a href="#/book">Book</a><a href="#/contact">Contact</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language"><button data-l="en" aria-pressed="true">EN</button><button data-l="hy" aria-pressed="false">ՀԱՅ</button><button data-l="ru" aria-pressed="false">РУС</button></div>
+  </div>
+</header>
+
+<main>
+<!-- HOME -->
+<div class="page" id="p-home" data-title="Wedding Photographer">
+  <section class="hero"><div class="wrap">
+    <div>
+      <h1>Your day, in the light</h1>
+      <p>Wedding and love-story photographer based in Yerevan, working across Armenia and worldwide. Natural moments, a calm presence, photographs you'll want to return to.</p>
+      <div class="btns"><a class="btn fill" href="#/book">Check my availability</a><a class="btn line" href="#/portfolio">View portfolio</a></div>
+    </div>
+    <div class="arch" role="img" aria-label="Wedding photograph (replace with your own)"></div>
+  </div></section>
+  <section class="sec alt"><div class="wrap">
+    <h2>Recent stories</h2>
+    <div class="grid">
+      <div class="tile arc t1"><span>Anna &amp; Aram</span></div>
+      <div class="tile t2"><span>Lake Sevan</span></div>
+      <div class="tile t3"><span>Gyumri wedding</span></div>
+    </div>
+    <p style="margin-top:34px"><a class="btn line" href="#/portfolio">See all work</a></p>
+  </div></section>
+  <section class="sec"><div class="wrap quote">
+    <blockquote>“Anahit felt like an old friend on our wedding day. In the photos we're laughing, exactly like we were.”</blockquote>
+    <cite>Mariam &amp; David</cite>
+  </div></section>
+  <section class="sec alt"><div class="wrap band">
+    <h2>Is your date still free?</h2>
+    <p class="lead">Popular dates book out months ahead. Send a message and I'll reply within a day.</p>
+    <a class="btn fill" href="#/contact">Get in touch</a>
+  </div></section>
+</div>
+
+<!-- PORTFOLIO -->
+<div class="page" id="p-portfolio" data-title="Portfolio">
+  <section class="sec"><div class="wrap">
+    <h2>Portfolio</h2>
+    <p class="lead">Selected stories from recent years.</p>
+    <div class="chips" role="group" aria-label="Filter">
+      <button class="chip" data-f="all" aria-pressed="true">All</button>
+      <button class="chip" data-f="wed" aria-pressed="false">Weddings</button>
+      <button class="chip" data-f="love" aria-pressed="false">Love stories</button>
+      <button class="chip" data-f="fam" aria-pressed="false">Family</button>
+    </div>
+    <div class="grid" style="margin-top:0">
+      <div class="tile arc t1" data-c="wed"><span>Anna &amp; Aram</span></div>
+      <div class="tile t2" data-c="love"><span>Lake Sevan</span></div>
+      <div class="tile t3" data-c="wed"><span>Gyumri wedding</span></div>
+      <div class="tile t4" data-c="fam"><span>Family day</span></div>
+      <div class="tile arc t5" data-c="love"><span>Lilit &amp; Tigran</span></div>
+      <div class="tile t6" data-c="wed"><span>Dilijan morning</span></div>
+    </div>
+  </div></section>
+</div>
+
+<!-- ABOUT -->
+<div class="page" id="p-about" data-title="About">
+  <section class="sec"><div class="wrap two">
+    <div class="pic" role="img" aria-label="Photographer portrait"></div>
+    <div>
+      <h2>I photograph moments, not poses</h2>
+      <p>I've been shooting weddings for ten years. I work quietly and stay out of the way, so you can laugh, hug and simply be yourselves.</p>
+      <p>Your finished photographs arrive within three weeks, edited and gathered in a private online gallery you can share with family.</p>
+    </div>
+  </div></section>
+  <section class="sec alt"><div class="wrap">
+    <h2>How it works</h2>
+    <ol class="steps">
+      <li><b>We talk</b>A relaxed call or coffee to plan your day and timeline.</li>
+      <li><b>We shoot</b>I stay close and unobtrusive from first look to last dance.</li>
+      <li><b>You receive</b>A preview in three days, the full gallery in three weeks.</li>
+    </ol>
+  </div></section>
+</div>
+
+<!-- PRICING -->
+<div class="page" id="p-pricing" data-title="Pricing">
+  <section class="sec"><div class="wrap">
+    <h2>Pricing</h2>
+    <p class="lead">Clear prices, no hidden fees. Every package can be adjusted to fit you.</p>
+    <div class="plans">
+      <div class="plan"><h3>Love story</h3><div class="price">$150</div>
+        <ul><li>2 hours of shooting</li><li>80 edited photos</li><li>Online gallery</li></ul>
+        <a class="btn line" href="#/contact">Choose</a></div>
+      <div class="plan main"><h3>Wedding</h3><div class="price">$650</div>
+        <ul><li>8 hours of shooting</li><li>400+ edited photos</li><li>Online gallery</li><li>Planning meeting</li></ul>
+        <a class="btn fill" href="#/contact">Choose</a></div>
+      <div class="plan"><h3>Full day</h3><div class="price">$1,100</div>
+        <ul><li>12 hours, two photographers</li><li>700+ edited photos</li><li>Printed album</li></ul>
+        <a class="btn line" href="#/contact">Choose</a></div>
+    </div>
+    <h2>Questions</h2>
+    <details><summary>How far ahead should I book?</summary><p>Popular dates fill 6–9 months ahead. A 30% deposit secures your date.</p></details>
+    <details><summary>Do you travel?</summary><p>Yes. Travel within 50 km of Yerevan is included; beyond that we agree on a fee.</p></details>
+    <details><summary>When do I get my photos?</summary><p>A preview within three days and the full gallery within three weeks.</p></details>
+    <details><summary>Can I get the unedited files?</summary><p>I deliver fully edited images only, so every photo you receive is finished.</p></details>
+  </div></section>
+</div>
+
+<!-- BLOG -->
+<div class="page" id="p-blog" data-title="Blog">
+  <section class="sec"><div class="wrap">
+    <h2>Blog</h2>
+    <p class="lead">Stories, tips and planning advice for your wedding day.</p>
+    <div style="margin-top:30px">
+      <a class="post" href="#/blog/first-look"><div class="thumb t1"></div><div><div class="meta">12.09.2026</div><h3>Why a first look makes your wedding day calmer</h3><p>Seeing each other before the ceremony gives you quiet time and better portraits.</p><span class="more">Read article</span></div></a>
+      <a class="post" href="#/blog/golden-hour"><div class="thumb t3"></div><div><div class="meta">28.08.2026</div><h3>Planning your portraits around golden hour</h3><p>The hour before sunset gives soft, warm light. Here is how to plan for it.</p><span class="more">Read article</span></div></a>
+      <a class="post" href="#/blog/wedding-timeline"><div class="thumb t6"></div><div><div class="meta">10.07.2026</div><h3>A simple timeline for an 8-hour wedding</h3><p>How to spread eight hours so nothing feels rushed.</p><span class="more">Read article</span></div></a>
+    </div>
+  </div></section>
+</div>
+<div class="page" id="p-blog-first-look" data-title="Why a first look makes your wedding day calmer">
+  <section class="sec"><div class="wrap article">
+    <a class="back" href="#/blog">Back to blog</a>
+    <h2>Why a first look makes your wedding day calmer</h2><div class="meta">12.09.2026</div>
+    <p>A first look is a private moment before the ceremony when you see each other alone. Without guests watching, the nerves settle and the real reactions happen.</p>
+    <p>It also frees up time. Portraits are done before the party, so you can enjoy cocktails and dinner with your guests.</p>
+    <a class="btn fill" href="#/contact">Get in touch</a>
+  </div></section>
+</div>
+<div class="page" id="p-blog-golden-hour" data-title="Planning your portraits around golden hour">
+  <section class="sec"><div class="wrap article">
+    <a class="back" href="#/blog">Back to blog</a>
+    <h2>Planning your portraits around golden hour</h2><div class="meta">28.08.2026</div>
+    <p>Golden hour is the hour before sunset, when the light turns soft and warm. In Armenia it falls around 7 pm in summer and 4:30 pm in winter.</p>
+    <p>Ask your venue when the sun sets and keep 30 minutes free for portraits just before it. Even a short walk in that light gives you your best photographs.</p>
+    <a class="btn fill" href="#/contact">Get in touch</a>
+  </div></section>
+</div>
+<div class="page" id="p-blog-wedding-timeline" data-title="A simple timeline for an 8-hour wedding">
+  <section class="sec"><div class="wrap article">
+    <a class="back" href="#/blog">Back to blog</a>
+    <h2>A simple timeline for an 8-hour wedding</h2><div class="meta">10.07.2026</div>
+    <p>Start with 90 minutes for getting ready and details, then 30 minutes for a first look. Allow 45 minutes for the ceremony and 60 minutes for family and couple portraits.</p>
+    <p>Keep the last three hours for dinner, speeches and the first dance. Leave a 15-minute buffer between each part, because weddings rarely run exactly on time.</p>
+    <a class="btn fill" href="#/contact">Get in touch</a>
+  </div></section>
+</div>
+
+<!-- BOOK -->
+<div class="page" id="p-book" data-title="Book">
+  <section class="sec"><div class="wrap">
+    <h2>Book your date</h2>
+    <p class="lead">Choose a date, pick a package and secure it with a 30% deposit.</p>
+    <div class="book">
+      <div>
+        <div class="calh"><button type="button" id="prev" aria-label="Previous month">‹</button><strong id="mon"></strong><button type="button" id="next" aria-label="Next month">›</button></div>
+        <div class="dow" id="dow"></div>
+        <div class="days" id="days"></div>
+        <p class="meta">Crossed-out dates are already booked.</p>
+      </div>
+      <form id="bf" class="sum">
+        <label>Package<select id="pk"><option value="150">Love story</option><option value="650" selected>Wedding</option><option value="1100">Full day</option></select></label>
+        <div class="row"><span>Date</span><b id="sd">—</b></div>
+        <div class="row"><span>Package price</span><b id="pp"></b></div>
+        <div class="row"><span>Deposit (30%)</span><b id="dp"></b></div>
+        <div class="row"><span>Balance on the wedding day</span><b id="bl"></b></div>
+        <label>Your name<input id="bn" required autocomplete="name"></label>
+        <label>Email<input id="be" type="email" required autocomplete="email"></label>
+        <button class="btn fill" type="submit">Reserve this date</button>
+        <p class="meta" id="err" hidden>Please choose a date first.</p>
+      </form>
+    </div>
+    <div class="done" id="done" hidden>
+      <h3>Booking request ready</h3>
+      <p class="lead">Your date is held once you send this request. I'll reply with confirmation and payment details for the deposit.</p>
+      <a class="btn fill" id="sendreq" href="#/book">Send booking request</a>
+    </div>
+  </div></section>
+</div>
+
+<!-- CONTACT -->
+<div class="page" id="p-contact" data-title="Contact">
+  <section class="sec"><div class="wrap contact">
+    <div>
+      <h2>Is your date free?</h2>
+      <p class="lead">Tell me about your day and I'll reply within 24 hours.</p>
+      <ul>
+        <li>Email: <a href="mailto:hello@example.com">hello@example.com</a></li>
+        <li>Phone: <a href="tel:+37400000000">+374 00 000 000</a></li>
+        <li>Instagram: @anahit.photo</li>
+      </ul>
+    </div>
+    <form id="f">
+      <label>Your name<input name="n" required autocomplete="name"></label>
+      <label>Event date<input name="d" type="date"></label>
+      <label>Package<select name="p"><option>Love story</option><option selected>Wedding</option><option>Full day</option><option>Not sure yet</option></select></label>
+      <label>Tell me about your day<textarea name="m"></textarea></label>
+      <button class="btn fill" type="submit">Send inquiry</button>
+    </form>
+  </div></section>
+</div>
+</main>
+
+<a class="wa" id="wa" target="_blank" rel="noopener" href="#">Chat on WhatsApp</a>
+<div class="lb" id="lb" hidden><button id="lbx" aria-label="Close">×</button><div id="lbi"></div></div>
+<footer>© 2026 Anahit Grigoryan. All rights reserved.</footer>
+
+<script>
+(function(){
+  var pages=['home','portfolio','about','blog','blog/first-look','blog/golden-hour','blog/wedding-timeline','pricing','book','contact'];
+  var base=SITE.name+' | ';
+  function route(){
+    var h=(location.hash||'').replace(/^#\/?/,'')||'home';
+    if(pages.indexOf(h)<0)h='home';var id='p-'+h.replace(/\//g,'-');
+    document.querySelectorAll('.page').forEach(function(p){p.classList.toggle('on',p.id===id)});
+    document.querySelectorAll('nav a').forEach(function(a){
+      var t=a.getAttribute('href').replace('#/','')||'home';
+      if(t===h.split('/')[0])a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');
+    });
+    document.title=base+document.getElementById(id).dataset.title;
+    window.scrollTo(0,0);
+  }
+  window.addEventListener('hashchange',route);
+  route();
+  document.querySelectorAll('.chip').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed','false')});
+      b.setAttribute('aria-pressed','true');
+      var f=b.dataset.f;
+      document.querySelectorAll('#p-portfolio .tile').forEach(function(t){t.hidden=!(f==='all'||t.dataset.c===f)});
+    });
+  });
+  document.getElementById('f').addEventListener('submit',function(e){
+    e.preventDefault();
+    var d=new FormData(e.target);
+    var body='Name: '+d.get('n')+'\nDate: '+(d.get('d')||'-')+'\nPackage: '+d.get('p')+'\n\n'+d.get('m');
+    location.href='mailto:'+SITE.email+'?subject='+encodeURIComponent('Photography inquiry')+'&body='+encodeURIComponent(body);
+  });
+})();
+</script>
+<script>
+(function(){
+var S=SITE,q=function(s){return document.querySelector(s)},qa=function(s){return document.querySelectorAll(s)};
+q('.brand').textContent=S.name;q('footer').textContent=S.footer;
+var m=q('#p-contact a[href^="mailto"]');m.href='mailto:'+S.email;m.textContent=S.email;
+var p=q('#p-contact a[href^="tel"]');p.href='tel:'+S.phoneRaw;p.textContent=S.phone;
+q('#p-contact li:last-child').textContent='Instagram: @'+S.instagram;
+qa('.price').forEach(function(e,i){e.textContent='$'+S.prices[i].toLocaleString('en-US')});
+qa('#pk option').forEach(function(o,i){o.value=S.prices[i]});
+function bg(el,u){if(!u)return;el.style.background='url("'+u+'") center/cover';el.dataset.photo=u}
+bg(q('.arch'),S.photos.hero);bg(q('.pic'),S.photos.about);
+qa('#p-portfolio .tile').forEach(function(e,i){bg(e,S.photos.tiles[i])});
+qa('#p-home .tile').forEach(function(e,i){bg(e,S.photos.tiles[i])});
+var lb=q('#lb'),lbi=q('#lbi');
+document.addEventListener('click',function(e){var t=e.target.closest('.tile[data-photo]');if(t){lbi.style.backgroundImage='url("'+t.dataset.photo+'")';lb.hidden=false}else if(e.target.closest('#lb')){lb.hidden=true}});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.hidden=true});
+var wa=q('#wa');if(S.whatsapp)wa.href='https://wa.me/'+S.whatsapp;else wa.hidden=true;
+})();
+</script>
+<script>
+(function(){
+var D={"Anahit Grigoryan":"Անահիտ Գրիգորյան","Home":"Գլխավոր","Portfolio":"Աշխատանքներ","About":"Իմ մասին","Pricing":"Գներ","Contact":"Կապ","Wedding Photographer":"Հարսանեկան ֆոտոգրաֆ",
+"Your day, in the light":"Ձեր օրը՝ լույսի մեջ",
+"Wedding and love-story photographer based in Yerevan, working across Armenia and worldwide. Natural moments, a calm presence, photographs you'll want to return to.":"Հարսանիքների և սիրային պատմությունների ֆոտոգրաֆ Երևանից՝ աշխատում եմ Հայաստանում և աշխարհով մեկ։ Բնական պահեր, հանգիստ ներկայություն, նկարներ, որոնց ուզում ես վերադառնալ։",
+"Check my availability":"Ստուգել ազատ օրերը","View portfolio":"Տեսնել աշխատանքները","Recent stories":"Վերջին պատմությունները","Anna & Aram":"Աննա և Արամ","Lake Sevan":"Սևանա լիճ","Gyumri wedding":"Գյումրիի հարսանիք","See all work":"Տեսնել բոլորը",
+"“Anahit felt like an old friend on our wedding day. In the photos we're laughing, exactly like we were.”":"«Անահիտը մեզ հետ այնպես էր, կարծես հին ընկեր լիներ։ Նկարներում մենք ծիծաղում ենք՝ ճիշտ ինչպես այդ օրը։»","Mariam & David":"Մարիամ և Դավիթ",
+"Is your date still free?":"Ձեր ամսաթիվը դեռ ազա՞տ է","Popular dates book out months ahead. Send a message and I'll reply within a day.":"Հայտնի օրերը զբաղեցվում են ամիսներ առաջ։ Գրեք ինձ, և մեկ օրվա ընթացքում կպատասխանեմ։","Get in touch":"Կապվել",
+"Selected stories from recent years.":"Ընտրված պատմություններ վերջին տարիներից։","All":"Բոլորը","Weddings":"Հարսանիքներ","Love stories":"Սիրային պատմություններ","Family":"Ընտանիք","Family day":"Ընտանեկան օր","Lilit & Tigran":"Լիլիթ և Տիգրան","Dilijan morning":"Դիլիջանի առավոտ",
+"I photograph moments, not poses":"Նկարում եմ պահերը, ոչ թե դիրքերը",
+"I've been shooting weddings for ten years. I work quietly and stay out of the way, so you can laugh, hug and simply be yourselves.":"Տասը տարի է՝ հարսանիքներ եմ նկարահանում։ Աշխատում եմ հանգիստ ու աննկատ, որպեսզի դուք ծիծաղեք, գրկվեք և պարզապես լինեք ինքներդ։",
+"Your finished photographs arrive within three weeks, edited and gathered in a private online gallery you can share with family.":"Պատրաստի նկարները ստանում եք երեք շաբաթվա ընթացքում՝ մշակված, փակ առցանց գալերեայում, որը կարող եք կիսել ընտանիքի հետ։",
+"How it works":"Ինչպես է ընթանում","We talk":"Զրուցում ենք","A relaxed call or coffee to plan your day and timeline.":"Հանգիստ զանգ կամ սուրճ՝ օրվա պլանը և ժամանակացույցը քննարկելու համար։","We shoot":"Նկարահանում ենք","I stay close and unobtrusive from first look to last dance.":"Մոտ եմ, բայց չեմ խանգարում՝ առաջին հայացքից մինչև վերջին պարը։","You receive":"Դուք ստանում եք","A preview in three days, the full gallery in three weeks.":"Նախադիտում՝ երեք օրում, ամբողջ գալերեան՝ երեք շաբաթում։",
+"Clear prices, no hidden fees. Every package can be adjusted to fit you.":"Հստակ գներ, թաքնված վճարներ չկան։ Ցանկացած փաթեթ կարելի է հարմարեցնել Ձեզ։","Love story":"Սիրային պատմություն","2 hours of shooting":"2 ժամ նկարահանում","80 edited photos":"80 մշակված նկար","Online gallery":"Առցանց գալերեա","Choose":"Ընտրել","Wedding":"Հարսանիք","8 hours of shooting":"8 ժամ նկարահանում","400+ edited photos":"400+ մշակված նկար","Planning meeting":"Պլանավորման հանդիպում","Full day":"Ամբողջ օրը","12 hours, two photographers":"12 ժամ, երկու ֆոտոգրաֆ","700+ edited photos":"700+ մշակված նկար","Printed album":"Տպագիր ալբոմ",
+"Questions":"Հարցեր","How far ahead should I book?":"Որքա՞ն շուտ պետք է ամրագրել","Popular dates fill 6–9 months ahead. A 30% deposit secures your date.":"Հայտնի օրերը լրանում են 6–9 ամիս առաջ։ 30% կանխավճարը ամրագրում է Ձեր օրը։","Do you travel?":"Գալի՞ս եք այլ քաղաք","Yes. Travel within 50 km of Yerevan is included; beyond that we agree on a fee.":"Այո։ Երևանից 50 կմ շառավղով ճանապարհը ներառված է, ավելի հեռու՝ պայմանավորվում ենք։","When do I get my photos?":"Երբ կստանամ նկարները","A preview within three days and the full gallery within three weeks.":"Նախադիտում՝ երեք օրում, ամբողջ գալերեան՝ երեք շաբաթում։","Can I get the unedited files?":"Կարո՞ղ եմ ստանալ չմշակված ֆայլերը","I deliver fully edited images only, so every photo you receive is finished.":"Տրամադրում եմ միայն ամբողջությամբ մշակված նկարներ, որպեսզի յուրաքանչյուրը պատրաստի լինի։",
+"Is your date free?":"Ազա՞տ է Ձեր ամսաթիվը","Tell me about your day and I'll reply within 24 hours.":"Պատմեք Ձեր օրվա մասին, և 24 ժամվա ընթացքում կպատասխանեմ։","Email:":"Էլ. փոստ՝","Phone:":"Հեռախոս՝","Your name":"Ձեր անունը","Event date":"Միջոցառման ամսաթիվ","Package":"Փաթեթ","Not sure yet":"Դեռ վստահ չեմ","Tell me about your day":"Պատմեք Ձեր օրվա մասին","Send inquiry":"Ուղարկել հարցում",
+"© 2026 Anahit Grigoryan. All rights reserved.":"© 2026 Անահիտ Գրիգորյան։ Բոլոր իրավունքները պաշտպանված են։"};
+Object.assign(D,{"Blog":"Բլոգ","Stories, tips and planning advice for your wedding day.":"Պատմություններ, խորհուրդներ և պլանավորման հուշումներ Ձեր հարսանեկան օրվա համար։","Read article":"Կարդալ հոդվածը","Back to blog":"Վերադառնալ բլոգ",
+"Why a first look makes your wedding day calmer":"Ինչու առաջին հայացքը հարսանեկան օրը դարձնում է ավելի հանգիստ","Seeing each other before the ceremony gives you quiet time and better portraits.":"Արարողությունից առաջ իրար տեսնելը տալիս է հանգիստ պահեր և ավելի լավ դիմանկարներ։","A first look is a private moment before the ceremony when you see each other alone. Without guests watching, the nerves settle and the real reactions happen.":"Առաջին հայացքը մասնավոր պահ է արարողությունից առաջ, երբ իրար տեսնում եք մենակ։ Երբ հյուրերը չեն նայում, հուզմունքը հանդարտվում է, և հայտնվում են իրական արձագանքները։","It also frees up time. Portraits are done before the party, so you can enjoy cocktails and dinner with your guests.":"Այն նաև ժամանակ է խնայում։ Դիմանկարները արվում են խնջույքից առաջ, և դուք կարող եք վայելել ընթրիքը հյուրերի հետ։",
+"Planning your portraits around golden hour":"Դիմանկարների պլանավորումը ոսկե ժամի շուրջ","The hour before sunset gives soft, warm light. Here is how to plan for it.":"Մայրամուտից առաջ մեկ ժամը տալիս է փափուկ, տաք լույս։ Ահա թե ինչպես պլանավորել։","Golden hour is the hour before sunset, when the light turns soft and warm. In Armenia it falls around 7 pm in summer and 4:30 pm in winter.":"Ոսկե ժամը մայրամուտից մեկ ժամ առաջն է, երբ լույսը դառնում է փափուկ ու տաք։ Հայաստանում այն ամռանը մոտ 19:00-ին է, ձմռանը՝ 16:30-ին։","Ask your venue when the sun sets and keep 30 minutes free for portraits just before it. Even a short walk in that light gives you your best photographs.":"Հարցրեք վայրին, թե երբ է մայրամուտը, և մինչ այդ 30 րոպե թողեք դիմանկարների համար։ Նույնիսկ կարճ զբոսանքը այդ լույսի տակ տալիս է լավագույն նկարները։",
+"A simple timeline for an 8-hour wedding":"Պարզ ժամանակացույց 8-ժամանոց հարսանիքի համար","How to spread eight hours so nothing feels rushed.":"Ինչպես բաշխել ութ ժամը, որ ոչինչ շտապողական չզգացվի։","Start with 90 minutes for getting ready and details, then 30 minutes for a first look. Allow 45 minutes for the ceremony and 60 minutes for family and couple portraits.":"Սկսեք 90 րոպեով պատրաստվելու և մանրամասների համար, հետո 30 րոպե առաջին հայացքին։ Արարողությանը տրամադրեք 45 րոպե, իսկ ընտանիքի ու զույգի դիմանկարներին՝ 60 րոպե։","Keep the last three hours for dinner, speeches and the first dance. Leave a 15-minute buffer between each part, because weddings rarely run exactly on time.":"Վերջին երեք ժամը թողեք ընթրիքի, ելույթների և առաջին պարի համար։ Յուրաքանչյուր մասի միջև թողեք 15 րոպե պաշար, քանի որ հարսանիքները հազվադեպ են ընթանում ճիշտ ժամանակին։"});
+Object.assign(D,{"Book":"Ամրագրում","Book your date":"Ամրագրեք Ձեր օրը","Choose a date, pick a package and secure it with a 30% deposit.":"Ընտրեք ամսաթիվ և փաթեթ, ապա ամրագրեք 30% կանխավճարով։","Crossed-out dates are already booked.":"Գծանշված օրերը արդեն զբաղված են։","Date":"Ամսաթիվ","Package price":"Փաթեթի գինը","Deposit (30%)":"Կանխավճար (30%)","Balance on the wedding day":"Մնացող հարսանիքի օրը","Email":"Էլ. փոստ","Reserve this date":"Ամրագրել այս օրը","Please choose a date first.":"Նախ ընտրեք ամսաթիվը։","Booking request ready":"Ամրագրման հարցումը պատրաստ է","Your date is held once you send this request. I'll reply with confirmation and payment details for the deposit.":"Ձեր օրը պահվում է այս հարցումը ուղարկելուց հետո։ Կպատասխանեմ հաստատմամբ և կանխավճարի վճարման տվյալներով։","Send booking request":"Ուղարկել ամրագրման հարցումը"});
+Object.assign(D,{"Chat on WhatsApp":"Գրել WhatsApp-ով"});D[SITE.name]=SITE.nameHy;D[SITE.footer]=SITE.footerHy;
+var RA=[`Home`,`Главная`,`Portfolio`,`Портфолио`,`About`,`Обо мне`,`Pricing`,`Цены`,`Contact`,`Контакты`,`Wedding Photographer`,`Свадебный фотограф`,
+`Your day, in the light`,`Ваш день, в лучах света`,
+`Wedding and love-story photographer based in Yerevan, working across Armenia and worldwide. Natural moments, a calm presence, photographs you'll want to return to.`,`Свадебный фотограф и фотограф love story из Еревана. Работаю по всей Армении и за её пределами. Естественные моменты, спокойное присутствие, снимки, к которым хочется возвращаться.`,
+`Check my availability`,`Проверить свободные даты`,`View portfolio`,`Смотреть портфолио`,`Recent stories`,`Недавние истории`,`Anna & Aram`,`Анна и Арам`,`Lake Sevan`,`Озеро Севан`,`Gyumri wedding`,`Свадьба в Гюмри`,`See all work`,`Смотреть все работы`,
+`“Anahit felt like an old friend on our wedding day. In the photos we're laughing, exactly like we were.”`,`«Анахит была с нами как старая подруга. На фото мы смеёмся — точно так же, как в тот день.»`,`Mariam & David`,`Мариам и Давид`,
+`Is your date still free?`,`Ваша дата ещё свободна?`,`Popular dates book out months ahead. Send a message and I'll reply within a day.`,`Популярные даты разбирают за месяцы. Напишите мне, и я отвечу в течение дня.`,`Get in touch`,`Связаться`,
+`Selected stories from recent years.`,`Избранные истории последних лет.`,`All`,`Все`,`Weddings`,`Свадьбы`,`Love stories`,`Love story`,`Family`,`Семья`,`Family day`,`Семейный день`,`Lilit & Tigran`,`Лилит и Тигран`,`Dilijan morning`,`Утро в Дилижане`,
+`I photograph moments, not poses`,`Я снимаю моменты, а не позы`,
+`I've been shooting weddings for ten years. I work quietly and stay out of the way, so you can laugh, hug and simply be yourselves.`,`Я снимаю свадьбы уже десять лет. Работаю спокойно и незаметно, чтобы вы могли смеяться, обниматься и просто быть собой.`,
+`Your finished photographs arrive within three weeks, edited and gathered in a private online gallery you can share with family.`,`Готовые снимки вы получаете в течение трёх недель — обработанными, в закрытой онлайн-галерее, которой можно поделиться с семьёй.`,
+`How it works`,`Как это проходит`,`We talk`,`Знакомимся`,`A relaxed call or coffee to plan your day and timeline.`,`Неспешный звонок или кофе, чтобы спланировать день и тайминг.`,`We shoot`,`Снимаем`,`I stay close and unobtrusive from first look to last dance.`,`Я рядом, но не мешаю — от первого взгляда до последнего танца.`,`You receive`,`Вы получаете`,`A preview in three days, the full gallery in three weeks.`,`Превью — через три дня, полная галерея — через три недели.`,
+`Clear prices, no hidden fees. Every package can be adjusted to fit you.`,`Понятные цены без скрытых платежей. Любой пакет можно подстроить под вас.`,`Love story`,`Love story`,`2 hours of shooting`,`2 часа съёмки`,`80 edited photos`,`80 обработанных фото`,`Online gallery`,`Онлайн-галерея`,`Choose`,`Выбрать`,`Wedding`,`Свадьба`,`8 hours of shooting`,`8 часов съёмки`,`400+ edited photos`,`400+ обработанных фото`,`Planning meeting`,`Встреча для планирования`,`Full day`,`Весь день`,`12 hours, two photographers`,`12 часов, два фотографа`,`700+ edited photos`,`700+ обработанных фото`,`Printed album`,`Печатный альбом`,
+`Questions`,`Вопросы`,`How far ahead should I book?`,`За сколько нужно бронировать?`,`Popular dates fill 6–9 months ahead. A 30% deposit secures your date.`,`Популярные даты заполняются за 6–9 месяцев. Предоплата 30% закрепляет вашу дату.`,`Do you travel?`,`Вы выезжаете в другие города?`,`Yes. Travel within 50 km of Yerevan is included; beyond that we agree on a fee.`,`Да. Выезд в пределах 50 км от Еревана включён, дальше обсуждаем стоимость.`,`When do I get my photos?`,`Когда я получу фото?`,`A preview within three days and the full gallery within three weeks.`,`Превью в течение трёх дней, полная галерея — в течение трёх недель.`,`Can I get the unedited files?`,`Можно получить необработанные файлы?`,`I deliver fully edited images only, so every photo you receive is finished.`,`Я передаю только полностью обработанные снимки, чтобы каждое фото было готово.`,
+`Is your date free?`,`Ваша дата свободна?`,`Tell me about your day and I'll reply within 24 hours.`,`Расскажите о вашем дне, и я отвечу в течение 24 часов.`,`Email:`,`Эл. почта:`,`Phone:`,`Телефон:`,`Your name`,`Ваше имя`,`Event date`,`Дата события`,`Package`,`Пакет`,`Not sure yet`,`Пока не уверен(а)`,`Tell me about your day`,`Расскажите о вашем дне`,`Send inquiry`,`Отправить заявку`,
+`Blog`,`Блог`,`Stories, tips and planning advice for your wedding day.`,`Истории, советы и рекомендации по планированию вашей свадьбы.`,`Read article`,`Читать статью`,`Back to blog`,`Назад в блог`,
+`Why a first look makes your wedding day calmer`,`Почему first look делает свадебный день спокойнее`,`Seeing each other before the ceremony gives you quiet time and better portraits.`,`Встреча до церемонии даёт тихие минуты и более удачные портреты.`,`A first look is a private moment before the ceremony when you see each other alone. Without guests watching, the nerves settle and the real reactions happen.`,`First look — это личный момент перед церемонией, когда вы видите друг друга наедине. Без гостей волнение уходит, и появляются настоящие эмоции.`,`It also frees up time. Portraits are done before the party, so you can enjoy cocktails and dinner with your guests.`,`Это ещё и экономит время. Портреты готовы до праздника, поэтому вы сможете наслаждаться ужином с гостями.`,
+`Planning your portraits around golden hour`,`Планируем портреты на золотой час`,`The hour before sunset gives soft, warm light. Here is how to plan for it.`,`Час перед закатом даёт мягкий тёплый свет. Вот как к нему подготовиться.`,`Golden hour is the hour before sunset, when the light turns soft and warm. In Armenia it falls around 7 pm in summer and 4:30 pm in winter.`,`Золотой час — это час перед закатом, когда свет становится мягким и тёплым. В Армении он приходится примерно на 19:00 летом и 16:30 зимой.`,`Ask your venue when the sun sets and keep 30 minutes free for portraits just before it. Even a short walk in that light gives you your best photographs.`,`Узнайте у площадки время заката и оставьте 30 минут для портретов прямо перед ним. Даже короткая прогулка в таком свете даёт лучшие кадры.`,
+`A simple timeline for an 8-hour wedding`,`Простой тайминг для 8-часовой свадьбы`,`How to spread eight hours so nothing feels rushed.`,`Как распределить восемь часов, чтобы ничего не казалось спешкой.`,`Start with 90 minutes for getting ready and details, then 30 minutes for a first look. Allow 45 minutes for the ceremony and 60 minutes for family and couple portraits.`,`Начните с 90 минут на сборы и детали, затем 30 минут на first look. Отведите 45 минут на церемонию и 60 минут на семейные и парные портреты.`,`Keep the last three hours for dinner, speeches and the first dance. Leave a 15-minute buffer between each part, because weddings rarely run exactly on time.`,`Последние три часа оставьте на ужин, тосты и первый танец. Между частями оставляйте запас в 15 минут: свадьбы редко идут строго по графику.`,
+`Book`,`Бронь`,`Book your date`,`Забронируйте вашу дату`,`Choose a date, pick a package and secure it with a 30% deposit.`,`Выберите дату и пакет и закрепите её предоплатой 30%.`,`Crossed-out dates are already booked.`,`Зачёркнутые даты уже заняты.`,`Date`,`Дата`,`Package price`,`Стоимость пакета`,`Deposit (30%)`,`Предоплата (30%)`,`Balance on the wedding day`,`Остаток в день свадьбы`,`Email`,`Эл. почта`,`Reserve this date`,`Забронировать эту дату`,`Please choose a date first.`,`Сначала выберите дату.`,`Booking request ready`,`Заявка на бронь готова`,`Your date is held once you send this request. I'll reply with confirmation and payment details for the deposit.`,`Дата закрепляется после отправки заявки. Я отвечу подтверждением и реквизитами для предоплаты.`,`Send booking request`,`Отправить заявку на бронь`,`Chat on WhatsApp`,`Написать в WhatsApp`];
+var R={},ri;for(ri=0;ri<RA.length;ri+=2)R[RA[ri]]=RA[ri+1];R[SITE.name]=SITE.nameRu;R[SITE.footer]=SITE.footerRu;
+var lg='en',hy=false,nodes=[],n,tw=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
+while(n=tw.nextNode()){if(n.parentNode.tagName==='SCRIPT')continue;var k=n.nodeValue.trim();if(D[k]||R[k])nodes.push([n,n.nodeValue,n.nodeValue.replace(k,function(){return D[k]||k}),n.nodeValue.replace(k,function(){return R[k]||k})]);}
+function setTitle(){var p=document.querySelector('.page.on');if(!p)return;var t=p.dataset.title;document.title=(lg==='hy'?SITE.nameHy+' | '+(D[t]||t):lg==='ru'?SITE.nameRu+' | '+(R[t]||t):SITE.name+' | '+t)}
+function setLang(h){lg=h;var ix=h==='hy'?2:h==='ru'?3:1;nodes.forEach(function(x){x[0].nodeValue=x[ix]});document.documentElement.lang=h;document.querySelectorAll('.lang button').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.l===h))});setTitle();if(window.bookRender)window.bookRender({hy:'hy-AM',ru:'ru-RU'}[h]||'en-US');try{localStorage.setItem('lang',h)}catch(e){}}
+document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.l)})});
+window.addEventListener('hashchange',setTitle);
+try{var sv=localStorage.getItem('lang');if(sv==='hy'||sv==='ru')setLang(sv)}catch(e){}
+})();
+</script>
+<script>
+(function(){
+var loc={hy:'hy-AM',ru:'ru-RU'}[document.documentElement.lang]||'en-US',sel=null,today=new Date();today.setHours(0,0,0,0);
+var cur=new Date(today.getFullYear(),today.getMonth(),1),ym=cur;
+function $(i){return document.getElementById(i)}
+function booked(d){return (d.getDate()*7+d.getMonth()*3)%5===0}
+function money(v){return '$'+Math.round(v).toLocaleString('en-US')}
+function render(){
+  $('mon').textContent=ym.toLocaleDateString(loc,{month:'long',year:'numeric'});
+  var dow=$('dow'),days=$('days'),i,d;dow.innerHTML='';days.innerHTML='';
+  for(i=0;i<7;i++){var s=document.createElement('span');s.textContent=new Date(2024,0,1+i).toLocaleDateString(loc,{weekday:'short'});dow.appendChild(s)}
+  var first=(new Date(ym.getFullYear(),ym.getMonth(),1).getDay()+6)%7;
+  for(i=0;i<first;i++)days.appendChild(document.createElement('i'));
+  var n=new Date(ym.getFullYear(),ym.getMonth()+1,0).getDate();
+  for(d=1;d<=n;d++){
+    var dt=new Date(ym.getFullYear(),ym.getMonth(),d),b=document.createElement('button');
+    b.type='button';b.textContent=d;b.setAttribute('aria-label',dt.toLocaleDateString(loc,{day:'numeric',month:'long',year:'numeric'}));
+    if(dt<=today||booked(dt)){b.disabled=true;b.className='off'}
+    if(sel&&+sel===+dt){b.className='sel';b.setAttribute('aria-pressed','true')}
+    (function(dt){b.addEventListener('click',function(){sel=dt;render();sum()})})(dt);
+    days.appendChild(b);
+  }
+}
+function sum(){
+  var p=+$('pk').value;
+  $('sd').textContent=sel?sel.toLocaleDateString(loc,{day:'numeric',month:'long',year:'numeric'}):'—';
+  $('pp').textContent=money(p);$('dp').textContent=money(p*0.3);$('bl').textContent=money(p*0.7);
+}
+$('prev').addEventListener('click',function(){if(ym>cur){ym=new Date(ym.getFullYear(),ym.getMonth()-1,1);render()}});
+$('next').addEventListener('click',function(){ym=new Date(ym.getFullYear(),ym.getMonth()+1,1);render()});
+$('pk').addEventListener('change',sum);
+$('bf').addEventListener('submit',function(e){
+  e.preventDefault();
+  if(!sel){$('err').hidden=false;return}
+  $('err').hidden=true;
+  if(SITE.paymentLink){location.href=SITE.paymentLink;return}
+  var o=$('pk').options[$('pk').selectedIndex].text;
+  var body='Name: '+$('bn').value+'\nEmail: '+$('be').value+'\nPackage: '+o+' ('+money(+$('pk').value)+')\nDate: '+sel.toLocaleDateString('en-US',{day:'numeric',month:'long',year:'numeric'})+'\nDeposit (30%): '+$('dp').textContent;
+  $('sendreq').href='mailto:'+SITE.email+'?subject='+encodeURIComponent('Booking request')+'&body='+encodeURIComponent(body);
+  $('done').hidden=false;$('done').scrollIntoView({behavior:'smooth',block:'center'});
+});
+window.bookRender=function(l){loc=l;render();sum()};
+render();sum();
+})();
+</script>
+</body>
+</html>
